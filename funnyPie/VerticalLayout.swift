@@ -10,10 +10,17 @@ import UIKit
 
 class VerticalLayout: UIView {
     
-    let yOffset: CGFloat = 0
+    var yOffset: CGFloat = 0
+    var width: CGFloat = 0
     
     init(width: CGFloat) {
         super.init(frame: CGRectMake(0, 0, width, 0))
+        self.width = width;
+    }
+    
+    init(width: CGFloat, margin: CGFloat) {
+        super.init(frame: CGRectMake(margin, margin, width-2*margin, 0))
+        self.width = width-2*margin;
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -26,9 +33,9 @@ class VerticalLayout: UIView {
         for i in 0..<subviews.count {
             var view = subviews[i] as! UIView
             view.layoutSubviews()
-            height += yOffset
             view.frame.origin.y = height
-            height += view.frame.height
+            height += yOffset
+            height += view.frame.size.height
         }
         
         self.frame.size.height = height
@@ -36,5 +43,17 @@ class VerticalLayout: UIView {
     override func addSubview(view: UIView) {
         super.addSubview(view)
     }
+    
+    // set it before adding viewers
+    func setOffset(offset: CGFloat) {
+        self.yOffset = offset;
+    }
+    
+    // auto created full size layout
+    func autoCreatedView(height: CGFloat) -> UIView {
+        let view = UIView(frame: CGRectMake(0, 0, self.width, height))
+        return view
+    }
+
 
 }
