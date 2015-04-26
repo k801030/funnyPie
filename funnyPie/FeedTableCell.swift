@@ -21,6 +21,8 @@ class FeedTableCell: UITableViewCell {
     */
     
     let layoutMargin: CGFloat = 15.0
+    var layoutWidth: CGFloat = 0.0
+    var layoutHeight: CGFloat = 0.0
     
     var porfileImage = UIImageView()
     var usernameLabel = UILabel()
@@ -29,8 +31,13 @@ class FeedTableCell: UITableViewCell {
     var likeButton = UIButton()
     var shareButton = UIButton()
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.layoutWidth = self.bounds.size.width
+        self.layoutHeight = self.bounds.size.height
+        
         self.usernameLabel.font = UIFont(name: "System", size: 24)
         self.usernameLabel.textColor = UIColor.blackColor()
         self.usernameLabel.backgroundColor = colorWithHexString("#bee3ff")
@@ -38,24 +45,35 @@ class FeedTableCell: UITableViewCell {
         //NSLog("self size: %f", self.bounds.size.width)
         //NSLog("screen size: %f", screenRect.width)
         
-        let ver = VerticalLayout(width: 50)
-        let view1 = UIView(frame: CGRectMake(
-            layoutMargin,
-            layoutMargin,
-            self.bounds.size.width-2*layoutMargin,
-            40))
-        view1.backgroundColor = colorWithHexString("#bee3ff")
-        let view2 = UIView(frame: CGRectMake(
-            layoutMargin,
-            layoutMargin,
-            self.bounds.size.width-2*layoutMargin,
-            40))
-        view2.backgroundColor = UIColor.blackColor()
-        ver.addSubview(view1)
-        ver.addSubview(view2)
+        let vtLayout = VerticalLayout(width: self.bounds.size.width, margin: layoutMargin)
+        vtLayout.setOffset(5.0)
         
-        self.addSubview(ver)
-        //setLayout()
+        let userView = vtLayout.autoCreatedView(40)
+        let hzLayout = HorizontalLayout(height: 40)
+        hzLayout.setOffset(5.0)
+        
+        let profileView = hzLayout.autoCreatedView(40)
+        profileView.backgroundColor = colorWithHexString("#bee3ff")
+        
+        let usernameView = hzLayout.autoCreatedView(120)
+        usernameView.backgroundColor = UIColor.grayColor()
+        
+        let textView = vtLayout.autoCreatedView(40)
+        textView.backgroundColor = colorWithHexString("#bee3ff")
+        
+        let photoView = vtLayout.autoCreatedView(40)
+        photoView.backgroundColor = UIColor.blackColor()
+        
+        vtLayout.addSubview(userView)
+        vtLayout.addSubview(textView)
+        vtLayout.addSubview(photoView)
+        
+        userView.addSubview(hzLayout)
+        hzLayout.addSubview(profileView)
+        hzLayout.addSubview(usernameView)
+
+        
+        self.addSubview(vtLayout)
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

@@ -49,7 +49,6 @@ class HorizontalLayout: UIView {
         let view = UIView(frame: CGRectMake(0, 0, width, self.bounds.height))
         return view
     }
-    
-    
+
     
 }
