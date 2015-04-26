@@ -24,13 +24,14 @@ class FeedTableCell: UITableViewCell {
     var layoutWidth: CGFloat = 0.0
     var layoutHeight: CGFloat = 0.0
     
+    var cellHeight: CGFloat = 0.0;
+    
     var porfileImage = UIImageView()
     var usernameLabel = UILabel()
     var contentTextField = UITextView()
     var photoImage = UIImageView()
     var likeButton = UIButton()
     var shareButton = UIButton()
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,32 +49,47 @@ class FeedTableCell: UITableViewCell {
         let vtLayout = VerticalLayout(width: self.bounds.size.width, margin: layoutMargin)
         vtLayout.setOffset(5.0)
         
-        let userView = vtLayout.autoCreatedView(40)
-        let hzLayout = HorizontalLayout(height: 40)
-        hzLayout.setOffset(5.0)
+        let topView = HorizontalLayout(height: 40)
+        topView.setOffset(5.0)
         
-        let profileView = hzLayout.autoCreatedView(40)
+        let profileView = topView.autoCreatedView(40)
         profileView.backgroundColor = colorWithHexString("#bee3ff")
         
-        let usernameView = hzLayout.autoCreatedView(120)
-        usernameView.backgroundColor = UIColor.grayColor()
-        
-        let textView = vtLayout.autoCreatedView(40)
+        usernameLabel = UILabel(frame: CGRectMake(0, 0, 120, topView.fullHeight))
+        //usernameView.backgroundColor = UIColor.grayColor()
+
+        let textView = UITextField(frame: CGRectMake(0, 0, vtLayout.fullWidth, 60))
+        textView.text = "你好，這是測試文。\n 內文如下："
         textView.backgroundColor = colorWithHexString("#bee3ff")
         
-        let photoView = vtLayout.autoCreatedView(40)
+        let photoView = vtLayout.autoCreatedView(160)
         photoView.backgroundColor = UIColor.blackColor()
         
-        vtLayout.addSubview(userView)
+        let bottomView = HorizontalLayout(height: 40)
+        
+        likeButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        likeButton.frame = CGRectMake(0, 0, 60, bottomView.fullHeight)
+        likeButton.setTitle("Like", forState: .Normal)
+        likeButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        
+        shareButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        shareButton.frame = CGRectMake(0, 0, 60, bottomView.fullHeight)
+        shareButton.setTitle("Share", forState: .Normal)
+        shareButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+ 
+        vtLayout.addSubview(topView)
         vtLayout.addSubview(textView)
         vtLayout.addSubview(photoView)
+        vtLayout.addSubview(bottomView)
         
-        userView.addSubview(hzLayout)
-        hzLayout.addSubview(profileView)
-        hzLayout.addSubview(usernameView)
-
+        topView.addSubview(profileView)
+        topView.addSubview(usernameLabel)
+        
+        bottomView.addSubview(likeButton)
+        bottomView.addSubview(shareButton)
         
         self.addSubview(vtLayout)
+        cellHeight = vtLayout.bounds.height
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -94,6 +110,12 @@ class FeedTableCell: UITableViewCell {
         
         //self.addSubview(cellContentView)
         //cellContentView.addSubview(usernameLabel)
+    }
+    
+    
+    // MARK: return cell's height
+    func getHeight() -> CGFloat {
+        return cellHeight
     }
     
     // MARK: Hex Color Method

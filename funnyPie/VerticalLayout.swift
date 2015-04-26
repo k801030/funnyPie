@@ -11,16 +11,16 @@ import UIKit
 class VerticalLayout: UIView {
     
     var yOffset: CGFloat = 0
-    var width: CGFloat = 0
+    var fullWidth: CGFloat = 0
     
     init(width: CGFloat) {
         super.init(frame: CGRectMake(0, 0, width, 0))
-        self.width = width;
+        self.fullWidth = width;
     }
     
     init(width: CGFloat, margin: CGFloat) {
         super.init(frame: CGRectMake(margin, margin, width-2*margin, 0))
-        self.width = width-2*margin;
+        self.fullWidth = width-2*margin;
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -51,7 +51,7 @@ class VerticalLayout: UIView {
     
     // auto created full size layout
     func autoCreatedView(height: CGFloat) -> UIView {
-        let view = UIView(frame: CGRectMake(0, 0, self.width, height))
+        let view = UIView(frame: CGRectMake(0, 0, self.fullWidth, height))
         return view
     }
 

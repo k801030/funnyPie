@@ -19,6 +19,7 @@
 		8BC6D8A21AEBB75B0066F407 /* FeedTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC6D8A01AEBB75B0066F407 /* FeedTableCell.xib */; };
 		8BC6D8A51AEBBC570066F407 /* VerticalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6D8A41AEBBC570066F407 /* VerticalLayout.swift */; };
 		8BC6D8A71AECBD7D0066F407 /* HorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6D8A61AECBD7D0066F407 /* HorizontalLayout.swift */; };
+		8BC6D8A91AECD8860066F407 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6D8A81AECD8860066F407 /* Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		8BC6D8A01AEBB75B0066F407 /* FeedTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedTableCell.xib; sourceTree = "<group>"; };
 		8BC6D8A41AEBBC570066F407 /* VerticalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalLayout.swift; sourceTree = "<group>"; };
 		8BC6D8A61AECBD7D0066F407 /* HorizontalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalLayout.swift; sourceTree = "<group>"; };
+		8BC6D8A81AECD8860066F407 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				8B5E57121AE8F8510056B6CF /* screenRect.swift */,
+				8BC6D8A81AECD8860066F407 /* Layout.swift */,
 				8BC6D8A41AEBBC570066F407 /* VerticalLayout.swift */,
 				8BC6D8A61AECBD7D0066F407 /* HorizontalLayout.swift */,
 			);
@@ -244,6 +247,7 @@
 				8BC6D8A11AEBB75B0066F407 /* FeedTableCell.swift in Sources */,
 				8B5E57131AE8F8510056B6CF /* screenRect.swift in Sources */,
 				8B5E56F11AE8DBEA0056B6CF /* AppDelegate.swift in Sources */,
+				8BC6D8A91AECD8860066F407 /* Layout.swift in Sources */,
 				8B5E56F31AE8DBEA0056B6CF /* FirstViewController.swift in Sources */,
 				8BC6D8A51AEBBC570066F407 /* VerticalLayout.swift in Sources */,
 			);

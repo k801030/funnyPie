@@ -11,9 +11,11 @@ import UIKit
 class HorizontalLayout: UIView {
     
     var xOffset: CGFloat = 0
+    var fullHeight: CGFloat = 0
     
     init(height: CGFloat) {
         super.init(frame: CGRectMake(0, 0, 0, height))
+        fullHeight = self.bounds.height
     }
     
 
