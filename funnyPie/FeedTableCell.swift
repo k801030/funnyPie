@@ -58,7 +58,7 @@ class FeedTableCell: UITableViewCell {
         usernameLabel = UILabel(frame: CGRectMake(0, 0, 120, topView.fullHeight))
         //usernameView.backgroundColor = UIColor.grayColor()
 
-        let textView = UITextField(frame: CGRectMake(0, 0, vtLayout.fullWidth, 60))
+        let textView = UITextView(frame: CGRectMake(0, 0, vtLayout.fullWidth, 60))
         textView.text = "你好，這是測試文。\n 內文如下："
         textView.backgroundColor = colorWithHexString("#bee3ff")
         
