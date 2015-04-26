@@ -31,7 +31,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         // register a custom cell
         var nib = UINib(nibName: "FeedTableCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "cell")
-
+        self.tableView.allowsSelection = false
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
         
@@ -41,7 +41,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: UITableView Methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -60,13 +60,26 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         //cell.frame = CGRectMake(0.0, 0.0, screenRect.width, 72.0)
 
         cell.usernameLabel.text = storys[row]["title"] as? String
-
+        cell.likeButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        cell.likeButton.tag = indexPath.row
         return cell
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 399;
+        //let cell = tableView.cellForRowAtIndexPath(indexPath) as! FeedTableCell
+        //return cell.getHeight()
+        return 360;
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    func buttonAction(sender: UIButton) {
+        NSLog("action of username: %d",sender.tag)
+        let row = sender.tag
+        var title: String = self.storys[row]["title"] as! String
+        NSLog("output: %@", title)
+    }
 }
 
