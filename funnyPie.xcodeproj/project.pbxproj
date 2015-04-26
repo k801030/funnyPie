@@ -14,6 +14,11 @@
 		8B5E56FA1AE8DBEA0056B6CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5E56F91AE8DBEA0056B6CF /* Images.xcassets */; };
 		8B5E56FD1AE8DBEA0056B6CF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B5E56FB1AE8DBEA0056B6CF /* LaunchScreen.xib */; };
 		8B5E57091AE8DBEA0056B6CF /* funnyPieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E57081AE8DBEA0056B6CF /* funnyPieTests.swift */; };
+		8B5E57131AE8F8510056B6CF /* screenRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E57121AE8F8510056B6CF /* screenRect.swift */; };
+		8BC6D8A11AEBB75B0066F407 /* FeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6D89F1AEBB75B0066F407 /* FeedTableCell.swift */; };
+		8BC6D8A21AEBB75B0066F407 /* FeedTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC6D8A01AEBB75B0066F407 /* FeedTableCell.xib */; };
+		8BC6D8A51AEBBC570066F407 /* VerticalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6D8A41AEBBC570066F407 /* VerticalLayout.swift */; };
+		8BC6D8A71AECBD7D0066F407 /* HorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6D8A61AECBD7D0066F407 /* HorizontalLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,11 @@
 		8B5E57021AE8DBEA0056B6CF /* funnyPieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = funnyPieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5E57071AE8DBEA0056B6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B5E57081AE8DBEA0056B6CF /* funnyPieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = funnyPieTests.swift; sourceTree = "<group>"; };
+		8B5E57121AE8F8510056B6CF /* screenRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = screenRect.swift; sourceTree = "<group>"; };
+		8BC6D89F1AEBB75B0066F407 /* FeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableCell.swift; sourceTree = "<group>"; };
+		8BC6D8A01AEBB75B0066F407 /* FeedTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedTableCell.xib; sourceTree = "<group>"; };
+		8BC6D8A41AEBBC570066F407 /* VerticalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalLayout.swift; sourceTree = "<group>"; };
+		8BC6D8A61AECBD7D0066F407 /* HorizontalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,9 @@
 				8B5E56F01AE8DBEA0056B6CF /* AppDelegate.swift */,
 				8B5E56F21AE8DBEA0056B6CF /* FirstViewController.swift */,
 				8B5E56F41AE8DBEA0056B6CF /* SecondViewController.swift */,
+				8BC6D89F1AEBB75B0066F407 /* FeedTableCell.swift */,
+				8BC6D8A01AEBB75B0066F407 /* FeedTableCell.xib */,
+				8BC6D8A31AEBBC2F0066F407 /* Lib */,
 				8B5E56F61AE8DBEA0056B6CF /* Main.storyboard */,
 				8B5E56F91AE8DBEA0056B6CF /* Images.xcassets */,
 				8B5E56FB1AE8DBEA0056B6CF /* LaunchScreen.xib */,
@@ -113,6 +126,16 @@
 				8B5E57071AE8DBEA0056B6CF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8BC6D8A31AEBBC2F0066F407 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				8B5E57121AE8F8510056B6CF /* screenRect.swift */,
+				8BC6D8A41AEBBC570066F407 /* VerticalLayout.swift */,
+				8BC6D8A61AECBD7D0066F407 /* HorizontalLayout.swift */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +220,7 @@
 			files = (
 				8B5E56F81AE8DBEA0056B6CF /* Main.storyboard in Resources */,
 				8B5E56FD1AE8DBEA0056B6CF /* LaunchScreen.xib in Resources */,
+				8BC6D8A21AEBB75B0066F407 /* FeedTableCell.xib in Resources */,
 				8B5E56FA1AE8DBEA0056B6CF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,8 +240,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5E56F51AE8DBEA0056B6CF /* SecondViewController.swift in Sources */,
+				8BC6D8A71AECBD7D0066F407 /* HorizontalLayout.swift in Sources */,
+				8BC6D8A11AEBB75B0066F407 /* FeedTableCell.swift in Sources */,
+				8B5E57131AE8F8510056B6CF /* screenRect.swift in Sources */,
 				8B5E56F11AE8DBEA0056B6CF /* AppDelegate.swift in Sources */,
 				8B5E56F31AE8DBEA0056B6CF /* FirstViewController.swift in Sources */,
+				8BC6D8A51AEBBC570066F407 /* VerticalLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +441,7 @@
 				8B5E570E1AE8DBEA0056B6CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B5E570F1AE8DBEA0056B6CF /* Build configuration list for PBXNativeTarget "funnyPieTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +450,7 @@
 				8B5E57111AE8DBEA0056B6CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

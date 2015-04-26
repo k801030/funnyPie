@@ -11,13 +11,27 @@ import UIKit
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    let storys = ["Sport", "Entertainment", "Work"]
+
+    let storys: NSMutableArray = []
     let cellIdentifier = "cell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        NSLog("%f", tableView.bounds.width)
+        // load sample data
+        let game = ["title": "Games", "name": "John"]
+        let sport = ["title": "Sports", "name": "Helen"]
+        let movie = ["title": "Movies", "name": "Jessica"]
+        self.storys.addObject(game)
+        self.storys.addObject(sport)
+        self.storys.addObject(movie)
+        
+        
+        // register a custom cell
+        var nib = UINib(nibName: "FeedTableCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "cell")
+
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
         
@@ -38,12 +52,20 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! FeedTableCell
+        
         
         let row = indexPath.row
-        cell.textLabel?.text = storys[row]
-        
+        // change cell's size
+        //cell.frame = CGRectMake(0.0, 0.0, screenRect.width, 72.0)
+
+        cell.usernameLabel.text = storys[row]["title"] as? String
+
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 399;
     }
     
 }
