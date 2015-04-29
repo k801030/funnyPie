@@ -20,9 +20,18 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         NSLog("%f", tableView.bounds.width)
         // load sample data
-        let game = ["content": "I hates Games\nhaha", "name": "John"]
-        let sport = ["content": "Sports", "name": "Helen"]
-        let movie = ["content": "Good night, everyone!", "name": "Jessica"]
+        let game = ["content": "I hates Games\nhaha",
+            "name": "John",
+            "options": ["yes","no", "hi"]
+        ]
+        let sport = ["content": "Sports",
+            "name": "Helen",
+            "options": ["yes","no"]
+        ]
+        let movie = ["content": "Good night, everyone!",
+            "name": "Jessica",
+            "options": ["yes","no"]
+        ]
         self.storys.addObject(game)
         self.storys.addObject(sport)
         self.storys.addObject(movie)
@@ -61,6 +70,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         cell.usernameLabel.text = storys[row]["name"] as? String
         cell.contentTextView.text = storys[row]["content"] as? String
+        cell.optionList = storys[row]["options"] as! NSArray
         cell.likeButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         cell.likeButton.tag = indexPath.row
         return cell

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedTableCell: UITableViewCell {
+class FeedTableCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate {
     
     /*
     @IBOutlet weak var profileImage: UIImageView!
@@ -26,12 +26,17 @@ class FeedTableCell: UITableViewCell {
     
     var cellHeight: CGFloat = 0.0;
     
-    var porfileImage = UIImageView()
-    var usernameLabel = UILabel()
-    var contentTextView = UITextView()
+    var porfileImage = UIImageView() // reqiured to set it
+    var usernameLabel = UILabel() // reqiured to set it
+    var contentTextView = UITextView() // reqiured to set it
+    
+    var optionList = [] // array of options; required to set it
+    var optionTableView = UITableView()
+    let optionCellIdentifier = "optionCell"
     var photoImage = UIImageView()
     var likeButton = UIButton()
     var shareButton = UIButton()
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,10 +64,9 @@ class FeedTableCell: UITableViewCell {
         //usernameView.backgroundColor = UIColor.grayColor()
 
         contentTextView = UITextView(frame: CGRectMake(0, 0, vtLayout.fullWidth, 60))
-        contentTextView.text = "你好，這是測試文。\n 內文如下："
         
-        let photoView = vtLayout.autoCreatedView(160)
-        photoView.backgroundColor = colorWithHexString("#bee3ff")
+        optionTableView = UITableView(frame: CGRectMake(0, 0, vtLayout.fullWidth, 160))
+        //optionTableView.backgroundColor = colorWithHexString("#bee3ff")
         
         let bottomView = HorizontalLayout(height: 40)
         
@@ -78,7 +82,7 @@ class FeedTableCell: UITableViewCell {
  
         vtLayout.addSubview(topView)
         vtLayout.addSubview(contentTextView)
-        vtLayout.addSubview(photoView)
+        vtLayout.addSubview(optionTableView)
         vtLayout.addSubview(bottomView)
         
         topView.addSubview(profileView)
@@ -89,6 +93,11 @@ class FeedTableCell: UITableViewCell {
         
         self.addSubview(vtLayout)
         cellHeight = vtLayout.bounds.height
+        
+        // register new class
+        self.optionTableView.registerClass(UITableViewCell.self as AnyClass, forCellReuseIdentifier: optionCellIdentifier)
+        self.optionTableView.dataSource = self;
+        self.optionTableView.delegate = self;
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -97,7 +106,33 @@ class FeedTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+
+    // MARK: UITableView Methods
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        NSLog("num of rows: @d", self.optionList.count)
+        return self.optionList.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(optionCellIdentifier, forIndexPath: indexPath) as? UITableViewCell
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: optionCellIdentifier)
+        }
+        
+        
+        
+        let row = indexPath.row
+        // change cell's size
+        //cell.frame = CGRectMake(0.0, 0.0, screenRect.width, 72.0)
+        
+        cell?.textLabel?.text = optionList[indexPath.row] as? String
+        return cell!
+    }
+
     
     // MARK: return cell's height
     func getHeight() -> CGFloat {

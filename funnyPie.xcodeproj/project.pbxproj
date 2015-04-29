@@ -20,6 +20,7 @@
 		8BC6D8A51AEBBC570066F407 /* VerticalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6D8A41AEBBC570066F407 /* VerticalLayout.swift */; };
 		8BC6D8A71AECBD7D0066F407 /* HorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6D8A61AECBD7D0066F407 /* HorizontalLayout.swift */; };
 		8BC6D8A91AECD8860066F407 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6D8A81AECD8860066F407 /* Layout.swift */; };
+		8BDDCCA11AF1147700FE192A /* optionTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BDDCCA01AF1147700FE192A /* optionTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		8BC6D8A41AEBBC570066F407 /* VerticalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalLayout.swift; sourceTree = "<group>"; };
 		8BC6D8A61AECBD7D0066F407 /* HorizontalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalLayout.swift; sourceTree = "<group>"; };
 		8BC6D8A81AECD8860066F407 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		8BDDCCA01AF1147700FE192A /* optionTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = optionTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				8B5E56F01AE8DBEA0056B6CF /* AppDelegate.swift */,
 				8B5E56F21AE8DBEA0056B6CF /* FirstViewController.swift */,
 				8B5E56F41AE8DBEA0056B6CF /* SecondViewController.swift */,
+				8BDDCCA01AF1147700FE192A /* optionTableCell.xib */,
 				8BC6D89F1AEBB75B0066F407 /* FeedTableCell.swift */,
 				8BC6D8A01AEBB75B0066F407 /* FeedTableCell.xib */,
 				8BC6D8A31AEBBC2F0066F407 /* Lib */,
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5E56F81AE8DBEA0056B6CF /* Main.storyboard in Resources */,
+				8BDDCCA11AF1147700FE192A /* optionTableCell.xib in Resources */,
 				8B5E56FD1AE8DBEA0056B6CF /* LaunchScreen.xib in Resources */,
 				8BC6D8A21AEBB75B0066F407 /* FeedTableCell.xib in Resources */,
 				8B5E56FA1AE8DBEA0056B6CF /* Images.xcassets in Resources */,
