@@ -28,7 +28,7 @@ class FeedTableCell: UITableViewCell {
     
     var porfileImage = UIImageView()
     var usernameLabel = UILabel()
-    var contentTextField = UITextView()
+    var contentTextView = UITextView()
     var photoImage = UIImageView()
     var likeButton = UIButton()
     var shareButton = UIButton()
@@ -58,12 +58,11 @@ class FeedTableCell: UITableViewCell {
         usernameLabel = UILabel(frame: CGRectMake(0, 0, 120, topView.fullHeight))
         //usernameView.backgroundColor = UIColor.grayColor()
 
-        let textView = UITextView(frame: CGRectMake(0, 0, vtLayout.fullWidth, 60))
-        textView.text = "你好，這是測試文。\n 內文如下："
-        textView.backgroundColor = colorWithHexString("#bee3ff")
+        contentTextView = UITextView(frame: CGRectMake(0, 0, vtLayout.fullWidth, 60))
+        contentTextView.text = "你好，這是測試文。\n 內文如下："
         
         let photoView = vtLayout.autoCreatedView(160)
-        photoView.backgroundColor = UIColor.blackColor()
+        photoView.backgroundColor = colorWithHexString("#bee3ff")
         
         let bottomView = HorizontalLayout(height: 40)
         
@@ -78,7 +77,7 @@ class FeedTableCell: UITableViewCell {
         shareButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
  
         vtLayout.addSubview(topView)
-        vtLayout.addSubview(textView)
+        vtLayout.addSubview(contentTextView)
         vtLayout.addSubview(photoView)
         vtLayout.addSubview(bottomView)
         

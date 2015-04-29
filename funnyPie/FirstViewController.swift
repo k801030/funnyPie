@@ -20,9 +20,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         NSLog("%f", tableView.bounds.width)
         // load sample data
-        let game = ["title": "Games", "name": "John"]
-        let sport = ["title": "Sports", "name": "Helen"]
-        let movie = ["title": "Movies", "name": "Jessica"]
+        let game = ["content": "I hates Games\nhaha", "name": "John"]
+        let sport = ["content": "Sports", "name": "Helen"]
+        let movie = ["content": "Good night, everyone!", "name": "Jessica"]
         self.storys.addObject(game)
         self.storys.addObject(sport)
         self.storys.addObject(movie)
@@ -59,7 +59,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         // change cell's size
         //cell.frame = CGRectMake(0.0, 0.0, screenRect.width, 72.0)
 
-        cell.usernameLabel.text = storys[row]["title"] as? String
+        cell.usernameLabel.text = storys[row]["name"] as? String
+        cell.contentTextView.text = storys[row]["content"] as? String
         cell.likeButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         cell.likeButton.tag = indexPath.row
         return cell
