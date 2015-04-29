@@ -11,7 +11,7 @@ import UIKit
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     let storys: NSMutableArray = []
     let cellIdentifier = "cell"
     
@@ -79,7 +79,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     func buttonAction(sender: UIButton) {
         NSLog("action of username: %d",sender.tag)
         let row = sender.tag
-        var title: String = self.storys[row]["title"] as! String
+        var title: String = self.storys[row]["content"] as! String
         NSLog("output: %@", title)
     }
 }

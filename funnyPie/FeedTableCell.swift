@@ -97,19 +97,6 @@ class FeedTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-
-    func setLayout() {
-        
-        //let cellContentView = UIView(frame: CGRectMake(5, 10, 300, 440)) as UIView
-        //let usernameLabel = UILabel(frame: CGRectMake(5, 10, 222, 18))
-        self.usernameLabel.textColor = UIColor.blackColor()
-        self.usernameLabel.font = UIFont(name: "System", size: 14.0)
-        self.usernameLabel.text = "User Name" //storys[row]["title"] as String
-        
-        
-        //self.addSubview(cellContentView)
-        //cellContentView.addSubview(usernameLabel)
-    }
     
     
     // MARK: return cell's height
