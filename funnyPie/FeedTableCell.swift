@@ -61,12 +61,10 @@ class FeedTableCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate
         profileView.backgroundColor = colorWithHexString("#bee3ff")
         
         usernameLabel = UILabel(frame: CGRectMake(0, 0, 120, topView.fullHeight))
-        //usernameView.backgroundColor = UIColor.grayColor()
 
         contentTextView = UITextView(frame: CGRectMake(0, 0, vtLayout.fullWidth, 60))
         
         optionTableView = UITableView(frame: CGRectMake(0, 0, vtLayout.fullWidth, 160))
-        //optionTableView.backgroundColor = colorWithHexString("#bee3ff")
         
         let bottomView = HorizontalLayout(height: 40)
         
@@ -113,7 +111,6 @@ class FeedTableCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        NSLog("num of rows: @d", self.optionList.count)
         return self.optionList.count;
     }
     
@@ -121,6 +118,7 @@ class FeedTableCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate
         var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(optionCellIdentifier, forIndexPath: indexPath) as? UITableViewCell
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: optionCellIdentifier)
+            cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
         }
         
         
@@ -131,6 +129,9 @@ class FeedTableCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate
         
         cell?.textLabel?.text = optionList[indexPath.row] as? String
         return cell!
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
 
     

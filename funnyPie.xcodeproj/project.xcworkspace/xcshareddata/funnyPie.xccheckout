@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1E43E728-C330-47EB-B229-E62D82CBB454</string>
+	<key>IDESourceControlProjectName</key>
+	<string>funnyPie</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>51D479740F58B5121EF3428DD703FBD2E4D85CFD</key>
+		<string>https://github.com/k801030/funnyPie.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>funnyPie.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>51D479740F58B5121EF3428DD703FBD2E4D85CFD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/k801030/funnyPie.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>51D479740F58B5121EF3428DD703FBD2E4D85CFD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>51D479740F58B5121EF3428DD703FBD2E4D85CFD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>funnyPie</string>
+		</dict>
+	</array>
+</dict>
+</plist>
